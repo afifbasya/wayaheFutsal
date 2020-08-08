@@ -1,3 +1,5 @@
 import BottomTabNavigator from './BottomTabNavigator'
+import HeaderInformation from './HeaderInformation'
+import Layanan from './Layanan'
 
-export { BottomTabNavigator };
+export { BottomTabNavigator, HeaderInformation, Layanan };

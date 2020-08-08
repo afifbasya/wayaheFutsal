@@ -1,9 +1,9 @@
-import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import React from 'react';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import TabItem from '../TabItem';
 
-const BottomTabNavigator = ({ state, descriptors, navigation }) => {
-    const focusedOptions = descriptors[state.routes[state.index].key].options;
+const BottomTabNavigator = ({state, descriptors, navigation}) => {
+  const focusedOptions = descriptors[state.routes[state.index].key].options;
 
   if (focusedOptions.tabBarVisible === false) {
     return null;
@@ -12,7 +12,7 @@ const BottomTabNavigator = ({ state, descriptors, navigation }) => {
   return (
     <View style={styles.container}>
       {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
+        const {options} = descriptors[route.key];
         const label =
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
@@ -42,7 +42,7 @@ const BottomTabNavigator = ({ state, descriptors, navigation }) => {
         };
 
         return (
-          <TabItem 
+          <TabItem
             key={index}
             isFocused={isFocused}
             label={label}
@@ -53,16 +53,18 @@ const BottomTabNavigator = ({ state, descriptors, navigation }) => {
       })}
     </View>
   );
-}
+};
 
-export default BottomTabNavigator
+export default BottomTabNavigator;
 
 const styles = StyleSheet.create({
-    container : {
-        flexDirection: 'row',
-        backgroundColor: '#FFFFFF',
-        justifyContent: 'space-between',
-        paddingHorizontal: 30,
-        paddingVertical: 20
-    }
-})
+  container: {
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'space-between',
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+});
